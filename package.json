@@ -6,7 +6,9 @@
   "scripts": {
     "build": "postcss ./src/styles.css -o ./public/dist/styles.css",
     "watch": "onchange 'tailwind.config.js' './public/**/*.html' './src/**/*.css' -- npm run build",
-    "prod": "NODE_ENV=production postcss ./src/styles.css -o ./public/dist/styles.css"
+    "prod": "NODE_ENV=production postcss ./src/styles.css -o ./public/dist/styles.css",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +19,7 @@
     "tailwindcss": "^2.0.2"
   },
   "devDependencies": {
+    "gh-pages": "^6.2.0",
     "onchange": "^7.1.0"
   }
 }
